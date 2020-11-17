@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT, dreamingpoet, Dreamingpoet, Blog, Node.js, Git, PHP, JAVA, JAVASCRIPT, HTML, CSS, jQuery, Angular, Vue, React">
+  <meta name="keywords" content="UE4,Config,">
 
 
 
@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="Stay Hungry,Stay Foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dreamingpoet&#39;s Blog">
-<meta property="og:url" content="https://dreamingpoet.github.io/archives/2019/12/index.html">
+<meta name="description" content="本篇文章将简单介绍UE4 项目开发过程中, 如何使用配置文件来修改项目中的参数 我们知道在UE4项目的根目录下都会有一个 Config 的文件夹,里面有各种.ini 结尾的文件,这里面都是UE4 默认生成的一些配置文件. 今天我们要做的就是使用自己定义的.ini 文件,定义自己的 Config 变量, 并用这些变量来初始化 Class 中的定义的成员变量.   1.关于打包后Config文件的位置">
+<meta name="keywords" content="UE4,Config">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UE4 Config配置文件的使用">
+<meta property="og:url" content="https://dreamingpoet.github.io/2020/11/17/UE4-Config/index.html">
 <meta property="og:site_name" content="Dreamingpoet&#39;s Blog">
-<meta property="og:description" content="Stay Hungry,Stay Foolish">
+<meta property="og:description" content="本篇文章将简单介绍UE4 项目开发过程中, 如何使用配置文件来修改项目中的参数 我们知道在UE4项目的根目录下都会有一个 Config 的文件夹,里面有各种.ini 结尾的文件,这里面都是UE4 默认生成的一些配置文件. 今天我们要做的就是使用自己定义的.ini 文件,定义自己的 Config 变量, 并用这些变量来初始化 Class 中的定义的成员变量.   1.关于打包后Config文件的位置">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-11-17T05:07:28.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dreamingpoet&#39;s Blog">
-<meta name="twitter:description" content="Stay Hungry,Stay Foolish">
+<meta name="twitter:title" content="UE4 Config配置文件的使用">
+<meta name="twitter:description" content="本篇文章将简单介绍UE4 项目开发过程中, 如何使用配置文件来修改项目中的参数 我们知道在UE4项目的根目录下都会有一个 Config 的文件夹,里面有各种.ini 结尾的文件,这里面都是UE4 默认生成的一些配置文件. 今天我们要做的就是使用自己定义的.ini 文件,定义自己的 Config 变量, 并用这些变量来初始化 Class 中的定义的成员变量.   1.关于打包后Config文件的位置">
 
 
 
@@ -116,12 +118,12 @@
 
 
 
-  <link rel="canonical" href="https://dreamingpoet.github.io/archives/2019/12/">
+  <link rel="canonical" href="https://dreamingpoet.github.io/2020/11/17/UE4-Config/">
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> 归档 | Dreamingpoet's Blog </title>
+  <title> UE4 Config配置文件的使用 | Dreamingpoet's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -142,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,64 +286,211 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 10 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                UE4 Config配置文件的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2020-11-17T08:54:11+08:00" content="2020-11-17">
+              2020-11-17
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/UE4/" itemprop="url" rel="index">
+                    <span itemprop="name">UE4</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>本篇文章将简单介绍UE4 项目开发过程中, 如何使用配置文件来修改项目中的参数</p>
+<p id="div-border-left-green">我们知道在UE4项目的根目录下都会有一个 Config 的文件夹,里面有各种.ini 结尾的文件,这里面都是UE4 默认生成的一些配置文件. 今天我们要做的就是使用自己定义的.ini 文件,定义自己的 Config 变量, 并用这些变量来初始化 Class 中的定义的成员变量.</p>
+
+
+<h4 id="1-关于打包后Config文件的位置"><a href="#1-关于打包后Config文件的位置" class="headerlink" title="1.关于打包后Config文件的位置"></a>1.关于打包后Config文件的位置</h4><p>如果采用Development 或者DebugGame 模式打包的话, Config 文件会生成在 <code>打包目录\项目名称\Saved\Config\WindowsNoEditor</code> 目录中, 但是如果用Shipping 模式打包的话, 会发现找不到这个目录了, 那么在Windows 系统下 我们可以在如下地址找到 <code>C:\Users\用户名\AppData\Local\项目名称\Saved\Config\WindowsNoEditor</code>.<br>接下来也会把我们自己的 Config 文件生成在指定的目录下,方便找到和修改.</p>
+<h4 id="2-把成员变量设置为可用Config-配置"><a href="#2-把成员变量设置为可用Config-配置" class="headerlink" title="2. 把成员变量设置为可用Config 配置"></a>2. 把成员变量设置为可用Config 配置</h4><p>在UE4 c++ Class 变量的宏定义中, 加入 <code>config</code> 关键字<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否作为服务器启动</span></span><br><span class="line">UPROPERTY(config ,Category=<span class="string">"CustomIni"</span>)</span><br><span class="line"><span class="keyword">bool</span> bServer=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-定义-Config-目录"><a href="#3-定义-Config-目录" class="headerlink" title="3. 定义 Config 目录"></a>3. 定义 Config 目录</h4><p>在类的构造函数中可以定义 自己的 Config 目录, 这里定义为项目目录下的 Settings 文件夹, 配置文件的名称是 Custom.ini<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConfigPath = FPaths::ProjectDir() / TEXT(<span class="string">"Settings/Custom.ini"</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-加载和保存-Config-配置"><a href="#4-加载和保存-Config-配置" class="headerlink" title="4. 加载和保存 Config 配置"></a>4. 加载和保存 Config 配置</h4><p>定义两个函数:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UMyGameInstance::LoadCustomConfig</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GConfig-&gt;Flush(<span class="literal">true</span>, ConfigPath);</span><br><span class="line">	ReloadConfig(<span class="keyword">this</span>-&gt;GetClass(), *ConfigPath);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UMyGameInstance::SaveCustomConfig</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SaveConfig(CPF_Config, *ConfigPath);</span><br><span class="line">	GConfig-&gt;Flush(<span class="literal">false</span>, ConfigPath);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>首先在 void UMyGameInstance::Init() 中调用SaveCustomConfig();  (Actor 类可以在 BeginPlay  中 ) </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UMyGameInstance::Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Super::Init();</span><br><span class="line"></span><br><span class="line">	bServer = <span class="literal">true</span>; <span class="comment">// bServer 默认为false, 而SaveCustomConfig() 函数只会把和默认值不一致的变量存入 Custom.ini中,所以此处先修改一下</span></span><br><span class="line">	SaveCustomConfig();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里调用 SaveCustomConfig()  的目的是为了在 <code>项目目录/Settings</code> 下生成 一个 Custom.ini.<br>Custom.ini 里面的 内容如下 <code>我为了测试方便是在蓝图中调用的</code> :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[/Game/Blueprints/GameControl/BP_PTGameInstance.BP_PTGameInstance_C]</span><br><span class="line">bServer=true</span><br></pre></td></tr></table></figure></p>
+<p>然后把保存的函数注释掉, 只保留加载函数:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">UMyGameInstance::Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Super::Init();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// bServer = true;</span></span><br><span class="line">	<span class="comment">// SaveCustomConfig();</span></span><br><span class="line"></span><br><span class="line">	LoadCustomConfig();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里调用 LoadCustomConfig() 的目的是为了把 UMyGameInstance 中 bServer 这个变量的值设置为 Custom.ini 中的值. 名称是一一对应的.</p>
+<p>这个就实现了, 无论是Development, Debug模式,还是Shipping 模式打包的项目, 都可以在 <code>项目目录/Settings</code>  下面设置 Custom.ini 中的变量, 设置的变量的值就会被设置为对应的变量的值.<br>对于同一个项目,需要不同自定义配置来启动的话,这将是一个很方面的方式.</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2019">2019</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center" style="color: #ccc;">
+    -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/dreamingpoet" target="_blank">dreamingpoet</a><br>有问题请发邮箱 <a class="link-blue" href target="_blank">Dreamingoet@126.com</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="Dreamingpoet WeChat Pay">
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="Dreamingpoet Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UE4/" rel="tag"><i class="fa fa-tag"></i> UE4</a>
+          
+            <a href="/tags/Config/" rel="tag"><i class="fa fa-tag"></i> Config</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/15/hexo-next-four/" itemprop="url">
-              
-                <span itemprop="name">Hexo-NexT搭建个人博客（四）</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/15/hexo-next-four/" rel="next" title="Hexo-NexT搭建个人博客（四）">
+                <i class="fa fa-chevron-left"></i> Hexo-NexT搭建个人博客（四）
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-15T23:25:24+08:00" content="2019-12-15">
-          12-15
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
-  </section>
-
-  
-
+      
+    </div>
+  </div>
 
 
           </div>
@@ -367,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/avatar/avatar.png" alt="Dreamingpoet">
           <p class="site-author-name" itemprop="name">Dreamingpoet</p>
@@ -478,6 +636,17 @@
         
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-关于打包后Config文件的位置"><span class="nav-number">1.</span> <span class="nav-text">1.关于打包后Config文件的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-把成员变量设置为可用Config-配置"><span class="nav-number">2.</span> <span class="nav-text">2. 把成员变量设置为可用Config 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-定义-Config-目录"><span class="nav-number">3.</span> <span class="nav-text">3. 定义 Config 目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-加载和保存-Config-配置"><span class="nav-number">4.</span> <span class="nav-text">4. 加载和保存 Config 配置</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -603,11 +772,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
